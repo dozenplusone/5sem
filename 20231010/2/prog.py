@@ -4,7 +4,7 @@ def fillbrd(a, b):
     return (a + 1, b) if a < b else (b + 1, a)
 
 def scale(a, b, A, B, x):
-    return A + (x - a) * (B - A) / (b - a)
+    return 0.5 * (A + B) if isclose(a, b) else (A + (x - a) * (B - A) / (b - a))
 
 def plot(W, H, a, b, func):
     plt = [[' '] * W for i in range(H)]
