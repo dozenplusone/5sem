@@ -1,0 +1,13 @@
+omn = Omnibus()
+del omn.omn
+print(omn.omn)
+omn.omn = 3
+print(omn.omn)
+other = Omnibus()
+omn.omn = other.omn = 4
+print(omn.omn, other.omn)
+del other.omn
+if hasattr(Omnibus, 'omn'):
+    print(Omnibus.omn, "- OK!")
+else:
+    print("What?")

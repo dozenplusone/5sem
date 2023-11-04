@@ -1,0 +1,8 @@
+tri1 = Triangle((0, 0), (3, 0), (0, 3))
+tri2 = Triangle((1, 1), (4, 1), (1, 4))
+tri3 = Triangle((4, 4), (4, 1), (1, 4))
+super = Triangle((0, 0), (8, 0), (0, 8))
+print(*(f"{n}({bool(x)}):{round(abs(x), 3)}" for n, x in zip("123S", (tri1, tri2, tri3, super))))
+print(f"{tri1 < tri2=}, {tri3 < super=}, {super < tri1=}, {tri1 < tri1=}")
+print(f"{tri1 in super=}, {tri2 in super=}, {tri3 in super=}, {super in super=}")
+print(f"{tri1 & tri2=}, {tri2 & tri3=}, {tri1 & tri3=}, {super & super=}")

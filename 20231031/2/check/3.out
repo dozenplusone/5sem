@@ -1,0 +1,4 @@
+1(True):12.5 2(True):18.0 P(False):0
+pseudo < tri1 < tri2=True, tri2 < pseudo=False
+tri1 in tri2=False, pseudo in tri1=True, pseudo in pseudo=True
+tri1 & tri2=True, tri2 & tri1=True, pseudo & tri2=False, pseudo & pseudo=False

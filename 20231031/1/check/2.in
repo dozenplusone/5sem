@@ -1,0 +1,12 @@
+a = Omnibus()
+a.xlii = a.fortytwo = 42
+print(a.xlii)
+del a.xlii, a.xiii
+b = Omnibus()
+a.fortytwo = b.fortytwo = 13
+print(a.fortytwo, b.fortytwo)
+c, d = Omnibus(), Omnibus()
+c.c = c.d = d.c = d.d = "666"
+print(c.c, c.d, d.c, d.d)
+del c.c, c.d
+print(d.c, d.d)

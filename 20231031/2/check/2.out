@@ -1,0 +1,4 @@
+1(True):4.5 2(True):4.5 3(True):4.5 S(True):32.0
+tri1 < tri2=False, tri3 < super=True, super < tri1=False, tri1 < tri1=False
+tri1 in super=True, tri2 in super=True, tri3 in super=True, super in super=True
+tri1 & tri2=True, tri2 & tri3=True, tri1 & tri3=False, super & super=True
