@@ -12,7 +12,7 @@ class DivStr(UserString):
 
     def __mod__(self, value):
         L = len(self) % value
-        return self[-L:] if L else ''
+        return self[-L:] if L else DivStr()
 
 
 import sys
