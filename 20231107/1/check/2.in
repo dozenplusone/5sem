@@ -1,0 +1,5 @@
+a = DivStr("AbcdEfghIjklmnOpqrstUvwxyz")
+print(* a.swapcase() // 6)
+print(* a.lower() // 2)
+print(a % 2)
+print(* a % 7 // 5, a[:10:4] % 42)
