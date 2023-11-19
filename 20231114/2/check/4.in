@@ -1,0 +1,12 @@
+class C:
+    data = Num()
+
+
+import string
+l, u, d = C(), C(), C()
+l.data, u.data, d.data = string.ascii_lowercase, string.ascii_uppercase, string.digits
+print(l.data, u.data, d.data)
+l.data += u.data
+u.data %= d.data
+d.data **= l.data // 10
+print(l.data, u.data, d.data)

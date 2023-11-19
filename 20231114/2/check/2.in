@@ -1,0 +1,16 @@
+class C:
+    data = Num()
+
+
+a, b = C(), C()
+a.data = 1
+try:
+    print(a.data / b.data)
+except ZeroDivisionError:
+    print('inf')
+b.data = 4
+print(a.data - b.data)
+a.data = range(42, 100500, 69)
+print(a.data // b.data + 1, (a.data >> b.data) // 7)
+b.data = C().data
+print(b.data ** b.data)

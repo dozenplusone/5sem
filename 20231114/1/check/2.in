@@ -1,0 +1,24 @@
+@objcount
+class C:
+    def __init__(self):
+        print('__C_init__')
+
+    def __del__(self):
+        print('__C_del__')
+
+
+@objcount
+class D(C):
+    def __init__(self):
+        print('__D_init__')
+
+    def __del__(self):
+        print('__D_del__')
+
+
+a, b, c, d, e = C(), D(), C(), D(), C()
+print(C.counter, D.counter)
+del b, e
+print(c.counter, d.counter)
+a, c, d = 42, 6.9, '1337'
+print(C.counter, D.counter)

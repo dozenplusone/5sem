@@ -1,0 +1,17 @@
+@objcount
+class UserList(list):
+    def __init__(self, iterable=()):
+        super().__init__(iterable)
+        print('_init_')
+    
+    def __del__(self):
+        print('_del_')
+
+
+a, b, c = UserList('asdf'), UserList((42,69,100500)), UserList()
+print(UserList.counter, ':', a, b, c)
+c.append(UserList.counter)
+c.append(UserList().counter)
+print(a, b, c)
+del a, b, c
+print(UserList.counter)

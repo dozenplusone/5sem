@@ -1,0 +1,24 @@
+try:
+    alp = Alpha(xg=42, s='test', m=2.)
+except AttributeError:
+    alp = Alpha(g=42, s='fun', m=3.)
+ans = 11
+for attr in 'a', 'i', 'qq', 'qkrq', 'u', 'test', '4', '_', '', 'A', 'g':
+    try:
+        setattr(alp, attr, ans)
+    except AttributeError:
+        ans -= 1
+print(ans)
+print(alp)
+try:
+    alq = AlphaQ(xg=42, s='test', m=2.)
+except AttributeError:
+    alq = AlphaQ(g=42, s='fun', m=3.)
+ans = 11
+for attr in 'a', 'i', 'qq', 'qkrq', 'u', 'test', '4', '_', '', 'A', 'g':
+    try:
+        setattr(alq, attr, ans)
+    except AttributeError:
+        ans -= 1
+print(ans)
+print(alq)
