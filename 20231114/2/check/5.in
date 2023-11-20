@@ -1,0 +1,9 @@
+class C:
+    n1 = Num()
+    n2 = Num()
+
+
+c = C()
+print(c.n1, c.n2)
+c.n1, c.n2 = 6.9, '42'
+print(c.n1, c.n2)

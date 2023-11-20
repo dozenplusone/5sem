@@ -1,12 +1,12 @@
 class Num:
     def __get__(self, obj, cls):
-        return obj.__dict__.setdefault('_data', 0)
+        return obj.__dict__.get(f"_data_{hex(id(self))}", 0)
 
     def __set__(self, obj, value):
         try:
-            obj._data = value.real
+            obj.__dict__[f"_data_{hex(id(self))}"] = value.real
         except AttributeError:
-            obj._data = len(value)
+            obj.__dict__[f"_data_{hex(id(self))}"] = len(value)
 
 
 import sys
