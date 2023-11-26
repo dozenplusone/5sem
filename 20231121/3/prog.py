@@ -13,12 +13,12 @@ def is_legit_wav_hdr(hdr):
 
 data = sys.stdin.buffer.read(44)
 print(
-    "Size=%d, Type=%d, Channels=%d, Rate=%d, Bits=%d, Data size=%d"
-    % (int.from_bytes(data[4:8], endian),
+    "Size=%d, Type=%d, Channels=%d, Rate=%d, Bits=%d, Data size=%d" % (
+        int.from_bytes(data[4:8], endian),
         int.from_bytes(data[20:22], endian),
         int.from_bytes(data[22:24], endian),
         int.from_bytes(data[24:28], endian),
         int.from_bytes(data[34:36], endian),
-        int.from_bytes(data[40:44], endian))
-    if is_legit_wav_hdr(data) else "NO"
+        int.from_bytes(data[40:44], endian)
+    ) if is_legit_wav_hdr(data) else "NO"
 )
