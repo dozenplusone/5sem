@@ -1,0 +1,7 @@
+__init__: (10,), {}
+This is D's __init__
+__init__: (10,), {}
+add: (9,), {}
+29
+add: (9,), {'another': 10}
+29

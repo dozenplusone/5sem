@@ -1,0 +1,23 @@
+from string import ascii_lowercase
+
+
+class Alpha(metaclass=dump):
+    __slots__ = tuple(ascii_lowercase)
+
+    def __init__(self, **kwargs):
+        for k, v in kwargs.items():
+            setattr(self, k, v)
+
+    def __str__(self):
+        ans = ''
+        for slot in self.__slots__:
+            try:
+                ans += slot + ": " + repr(getattr(self, slot)) + ", "
+            except AttributeError:
+                pass
+        return ans[:-2]
+
+
+alp = Alpha(c=10, z=2, a=42)
+alp.e = 123
+print(alp)

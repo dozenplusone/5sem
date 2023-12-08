@@ -1,0 +1,10 @@
+    xchg eax eax
+    store 13.37 rax
+    ifeq a a 42
+    // Just some random instructions.
+    sub rdx rax
+    sbb rcx rcx
+    and rcx rdx
+    add rax rcx
+    out rax
+42: out a

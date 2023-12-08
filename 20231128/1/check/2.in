@@ -1,0 +1,17 @@
+class DivStr(metaclass=dump):
+    def __init__(self, value=''):
+        self.__str = value
+
+    def __floordiv__(self, value):
+        L = len(self.__str) // value
+        for i in range(value):
+            yield self.__str[L*i: L*(i + 1)]
+
+    def __mod__(self, value):
+        L = len(self.__str) % value
+        return self.__str[-L:] if L else ''
+
+
+a = DivStr("XcDfQWEasdERTdfgRTY")
+print(* a // 4)
+print(a % 4)

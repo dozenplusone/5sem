@@ -1,0 +1,4 @@
+    store 42 N
+    div N x N
+    ifeq N x L
+K:  out N

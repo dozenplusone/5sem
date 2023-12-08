@@ -1,0 +1,15 @@
+    store "Fibonacci" eax
+    store 1 edx
+    xor 0x20 al
+    store 100 ecx
+    out eax
+    out edx
+@b: add eax edx eax
+    ifge eax ecx @f
+    add edx eax edx
+    out eax
+    ifge edx ecx @f
+    out edx
+    iflt edx ecx @b
+@f: out ecx
+    stop
