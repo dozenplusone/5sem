@@ -1,4 +1,5 @@
 import asyncio
+import random
 
 async def main(A):
     tasks, B = await mtasks(A)
