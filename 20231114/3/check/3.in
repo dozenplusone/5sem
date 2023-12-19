@@ -1,20 +1,15 @@
+import sys
 import timeit
-from pympler import asizeof
 from string import ascii_lowercase
 
-init = ', '.join(f"{i}={ord(i)}" for i in ascii_lowercase)
-
-def stp(name, type):
-    return f"{name} = [{type}({init}) for i in range(100000)]"
-
 def tester(name):
-    return f"""for i in range(100000):
-        for j in ascii_lowercase:
-            setattr({name}[i], j, getattr({name}[i], j) - 96)
-    """
+    return f"""for i in range(20000):
+    for j in ascii_lowercase:
+        setattr({name}[i], j, getattr({name}[i], j) - 96)
+"""
 
-exec(stp('lst', 'Alpha'))
-exec(stp('lstq', 'AlphaQ'))
+lst = [Alpha(**{j: ord(j) for j in ascii_lowercase}) for i in range(20000)]
+lstq = [AlphaQ(**{j: ord(j) for j in ascii_lowercase}) for i in range(20000)]
 print(timeit.timeit(stmt=tester('lst'), number=1, globals=globals()) 
       < timeit.timeit(stmt=tester('lstq'), number=1, globals=globals()))
-print(asizeof.asizeof(lst) > asizeof.asizeof(lstq))
+print(sys.getsizeof(lst) > sys.getsizeof(lstq))
